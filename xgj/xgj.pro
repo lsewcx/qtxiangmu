@@ -29,7 +29,18 @@ FORMS += \
     mainwindow.ui \
     testwidget.ui
 
+win32{
+LIBS+= -luser32
+}
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -LE:/python/libs/ -lpython311
+else:win32:CONFIG(debug, debug|release): LIBS += -LE:/python/libs/ -lpython311d
+else:unix: LIBS += -LE:/python/libs/ -lpython311
+
+INCLUDEPATH += E:/python/include
+DEPENDPATH += E:/python/include

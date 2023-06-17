@@ -9,7 +9,9 @@
 #include<QKeyEvent>
 #include<QDebug>
 #include<QWidget>
+#include<QObject>
 #include<QEvent>
+#include"windows.h"
 
 QT_BEGIN_NAMESPACE
 //ui文件中的类
@@ -24,6 +26,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 protected:
     void mousePressEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
@@ -32,4 +35,6 @@ protected:
 private:
     Ui::MainWindow *ui;
 };
+
 #endif // MAINWINDOW_H
+

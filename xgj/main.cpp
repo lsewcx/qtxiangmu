@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     //应用程序类
     QApplication a(argc, argv);
     //窗口对象
+
     MainWindow w;
     //显示窗口
     w.show();

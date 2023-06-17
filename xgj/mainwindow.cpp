@@ -70,17 +70,26 @@ void MainWindow::mousePressEvent(QMouseEvent *event)//鼠标右键
     }
 }
 
-
+ int a=0;
 // 键盘按下事件
 void MainWindow::keyPressEvent(QKeyEvent *event)//注意keyPressEventk不要大写
 {
     // 是否按下Ctrl键
-    if(event->modifiers() == Qt::ControlModifier)
+    if(a==0&&event->modifiers() == Qt::ControlModifier)
     {
         // 是否按下M键
-        if(event->key() == Qt::Key_M)
+        if(a==0&&event->key() == Qt::Key_M)
+        {
             // 窗口最大化
-            setWindowState(Qt::WindowMaximized);
+            showMaximized();
+            a++;
+        }
+    }
+    else if(a==1&&event->modifiers() == Qt::ControlModifier&&event->key() == Qt::Key_M)
+    {
+        //窗口最小化
+        showMinimized();
+        a=0;
     }
     else QWidget::keyPressEvent(event);
 }

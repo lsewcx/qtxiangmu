@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\xgj -I. -I..\..\qt\5.14.2\mingw73_64\include -I..\..\qt\5.14.2\mingw73_64\include\QtWidgets -I..\..\qt\5.14.2\mingw73_64\include\QtGui -I..\..\qt\5.14.2\mingw73_64\include\QtANGLE -I..\..\qt\5.14.2\mingw73_64\include\QtCore -Irelease -I. -I/include -I..\..\qt\5.14.2\mingw73_64\mkspecs\win32-g++ 
+INCPATH       = -I..\xgj -I. -IE:\python\include -I..\..\qt\5.14.2\mingw73_64\include -I..\..\qt\5.14.2\mingw73_64\include\QtWidgets -I..\..\qt\5.14.2\mingw73_64\include\QtGui -I..\..\qt\5.14.2\mingw73_64\include\QtANGLE -I..\..\qt\5.14.2\mingw73_64\include\QtCore -Irelease -I. -I/include -I..\..\qt\5.14.2\mingw73_64\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        D:\qt\5.14.2\mingw73_64\lib\libQt5Widgets.a D:\qt\5.14.2\mingw73_64\lib\libQt5Gui.a D:\qt\5.14.2\mingw73_64\lib\libQt5Core.a  -lmingw32 D:\qt\5.14.2\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        -luser32 -LE:\python\libs -lpython311 D:\qt\5.14.2\mingw73_64\lib\libQt5Widgets.a D:\qt\5.14.2\mingw73_64\lib\libQt5Gui.a D:\qt\5.14.2\mingw73_64\lib\libQt5Core.a  -lmingw32 D:\qt\5.14.2\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = D:\qt\5.14.2\mingw73_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -222,9 +222,24 @@ release/moc_mainwindow.cpp: ../xgj/mainwindow.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QAction \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qaction.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qactiongroup.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QDebug \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QObject \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QEvent \
 		release/moc_predefs.h \
 		../../qt/5.14.2/mingw73_64/bin/moc.exe
-	D:\qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/qtxiangmu/build-xgj-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/qtxiangmu/xgj -ID:/qt/5.14.2/mingw73_64/include -ID:/qt/5.14.2/mingw73_64/include/QtWidgets -ID:/qt/5.14.2/mingw73_64/include/QtGui -ID:/qt/5.14.2/mingw73_64/include/QtANGLE -ID:/qt/5.14.2/mingw73_64/include/QtCore -I. -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\xgj\mainwindow.h -o release\moc_mainwindow.cpp
+	D:\qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/qtxiangmu/build-xgj-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/qtxiangmu/xgj -IE:/python/include -ID:/qt/5.14.2/mingw73_64/include -ID:/qt/5.14.2/mingw73_64/include/QtWidgets -ID:/qt/5.14.2/mingw73_64/include/QtGui -ID:/qt/5.14.2/mingw73_64/include/QtANGLE -ID:/qt/5.14.2/mingw73_64/include/QtCore -I. -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\xgj\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_testwidget.cpp: ../xgj/testwidget.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
@@ -333,7 +348,7 @@ release/moc_testwidget.cpp: ../xgj/testwidget.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		release/moc_predefs.h \
 		../../qt/5.14.2/mingw73_64/bin/moc.exe
-	D:\qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/qtxiangmu/build-xgj-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/qtxiangmu/xgj -ID:/qt/5.14.2/mingw73_64/include -ID:/qt/5.14.2/mingw73_64/include/QtWidgets -ID:/qt/5.14.2/mingw73_64/include/QtGui -ID:/qt/5.14.2/mingw73_64/include/QtANGLE -ID:/qt/5.14.2/mingw73_64/include/QtCore -I. -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\xgj\testwidget.h -o release\moc_testwidget.cpp
+	D:\qt\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/qtxiangmu/build-xgj-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/qtxiangmu/xgj -IE:/python/include -ID:/qt/5.14.2/mingw73_64/include -ID:/qt/5.14.2/mingw73_64/include/QtWidgets -ID:/qt/5.14.2/mingw73_64/include/QtGui -ID:/qt/5.14.2/mingw73_64/include/QtANGLE -ID:/qt/5.14.2/mingw73_64/include/QtCore -I. -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\xgj\testwidget.h -o release\moc_testwidget.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -470,6 +485,21 @@ release/main.o: ../xgj/main.cpp ../xgj/mainwindow.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QAction \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qaction.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qactiongroup.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QDebug \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QObject \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QEvent \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
 		../../qt/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -587,11 +617,23 @@ release/mainwindow.o: ../xgj/mainwindow.cpp ../xgj/mainwindow.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../qt/5.14.2/mingw73_64/include/QtGui/qicon.h \
-		ui_mainwindow.h \
-		../../qt/5.14.2/mingw73_64/include/QtCore/QVariant \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QMouseEvent \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/QAction \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qaction.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qactiongroup.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../../qt/5.14.2/mingw73_64/include/QtGui/QKeyEvent \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QDebug \
+		../../qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QObject \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QEvent \
+		ui_mainwindow.h \
+		../../qt/5.14.2/mingw73_64/include/QtCore/QVariant \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
 		../../qt/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -606,11 +648,7 @@ release/mainwindow.o: ../xgj/mainwindow.cpp ../xgj/mainwindow.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/QToolBar \
 		../../qt/5.14.2/mingw73_64/include/QtWidgets/qtoolbar.h \
-		../../qt/5.14.2/mingw73_64/include/QtWidgets/QWidget \
-		../xgj/testwidget.h \
-		../../qt/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
-		../../qt/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
-		../../qt/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h
+		../xgj/testwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\xgj\mainwindow.cpp
 
 release/testwidget.o: ../xgj/testwidget.cpp ../xgj/testwidget.h \
