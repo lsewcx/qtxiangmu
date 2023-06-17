@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "testwidget.h"
-#include<QPushButton>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,8 +26,9 @@ MainWindow::MainWindow(QWidget *parent)
     btn123->move(100,0);
 
 
-    //信号槽
+    //信号槽当btn被按下btn123就会被隐藏
     connect(btn,&QPushButton::clicked,btn123,&QPushButton::hide);
+
 
     //初始化操作（数据，窗口）
     //显示当前窗口，显示另外一个
@@ -43,5 +44,44 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event)//鼠标右键
+{
+    if(event->button()==Qt::RightButton)
+    {
+        QMenu menu;
+        QAction* act=menu.addAction("c++");
+        connect(act,&QAction::triggered,this,[=]()
+        {
+            QMessageBox::information(this,"title","你选择的是c++");
+        });
+        QAction* act1=menu.addAction(("java"));
+        connect(act1,&QAction::triggered,this,[=]()
+        {
+            QMessageBox::information(this,"title","你选择的是java");
+        });
+        QAction* act2=menu.addAction("python");
+        connect(act2,&QAction::triggered,this,[=]()
+        {
+            QMessageBox::information(this,"title","你选择的是python");
+        });
+        menu.exec(QCursor::pos());
+    }
+}
+
+
+// 键盘按下事件
+void MainWindow::keyPressEvent(QKeyEvent *event)//注意keyPressEventk不要大写
+{
+    // 是否按下Ctrl键
+    if(event->modifiers() == Qt::ControlModifier)
+    {
+        // 是否按下M键
+        if(event->key() == Qt::Key_M)
+            // 窗口最大化
+            setWindowState(Qt::WindowMaximized);
+    }
+    else QWidget::keyPressEvent(event);
 }
 

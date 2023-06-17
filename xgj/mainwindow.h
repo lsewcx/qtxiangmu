@@ -1,7 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include<QMainWindow>
+#include<QPushButton>
+#include<QMouseEvent>
+#include<QAction>
+#include<QMessageBox>
+#include<QKeyEvent>
+#include<QDebug>
+#include<QWidget>
+#include<QEvent>
 
 QT_BEGIN_NAMESPACE
 //ui文件中的类
@@ -15,6 +23,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    void mousePressEvent(QMouseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
+
 
 private:
     Ui::MainWindow *ui;
