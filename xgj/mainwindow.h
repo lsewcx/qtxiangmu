@@ -26,11 +26,18 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots: //调用方法把这两行加上其余查看testwidget中的内容
+    void activated();
+
+
 
 protected:
     void mousePressEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
 
+
+private slots:
+    void on_actionshezhi_2_triggered();
 
 private:
     Ui::MainWindow *ui;

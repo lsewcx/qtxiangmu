@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>23</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -36,17 +26,26 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actioncaidan">
-   <property name="text">
-    <string>caidan</string>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
    </property>
-  </action>
-  <action name="actionshezhi">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>主菜单</string>
+    </property>
+    <addaction name="actionshezhi_2"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="actionshezhi_2">
    <property name="text">
-    <string>shezhi</string>
+    <string>设置</string>
    </property>
   </action>
  </widget>

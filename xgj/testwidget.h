@@ -14,6 +14,8 @@ class testwidget : public QWidget
 public:
     explicit testwidget(QWidget *parent = nullptr);
     ~testwidget();
+public slots:
+    void activated();
 
 private:
     Ui::testwidget *ui;

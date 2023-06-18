@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -23,36 +24,38 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actioncaidan;
-    QAction *actionshezhi;
+    QAction *actionshezhi_2;
     QWidget *centralwidget;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
+    QMenuBar *menuBar;
+    QMenu *menu;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
-        actioncaidan = new QAction(MainWindow);
-        actioncaidan->setObjectName(QString::fromUtf8("actioncaidan"));
-        actionshezhi = new QAction(MainWindow);
-        actionshezhi->setObjectName(QString::fromUtf8("actionshezhi"));
-        actionshezhi->setCheckable(false);
+        actionshezhi_2 = new QAction(MainWindow);
+        actionshezhi_2->setObjectName(QString::fromUtf8("actionshezhi_2"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+        menuBar = new QMenuBar(MainWindow);
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 800, 23));
+        menu = new QMenu(menuBar);
+        menu->setObjectName(QString::fromUtf8("menu"));
+        MainWindow->setMenuBar(menuBar);
+
+        menuBar->addAction(menu->menuAction());
+        menu->addAction(actionshezhi_2);
 
         retranslateUi(MainWindow);
 
@@ -62,9 +65,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        actioncaidan->setText(QCoreApplication::translate("MainWindow", "caidan", nullptr));
-        actionshezhi->setText(QCoreApplication::translate("MainWindow", "shezhi", nullptr));
+        actionshezhi_2->setText(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
+        menu->setTitle(QCoreApplication::translate("MainWindow", "\344\270\273\350\217\234\345\215\225", nullptr));
     } // retranslateUi
 
 };
