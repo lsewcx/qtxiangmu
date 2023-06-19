@@ -45,14 +45,8 @@ void testwidget::activated()
     else this->show();
 
 }
-
+int count=0;
 void testwidget::KSEKeySequenceChanged(const QKeySequence &keySequence)
 {
-    if(keySequence == QKeySequence(tr("Ctrl+Q"))) {
-            /* 结束程序 */
-            this->close();
-        }else {
-            /* 打印出按下的组合键 */
-        return;
-        }
+    
 }

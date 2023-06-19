@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //如果指定父对象不是独立窗口
     //testwidget* w=new testwidget(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -106,3 +107,5 @@ void MainWindow::on_actionshezhi_2_triggered()
     testwidget* w=new testwidget;
     w->show();
 }
+
+

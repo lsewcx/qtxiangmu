@@ -12,6 +12,7 @@
 #include<QObject>
 #include<QEvent>
 #include"windows.h"
+#include<QKeySequenceEdit>
 
 QT_BEGIN_NAMESPACE
 //ui文件中的类

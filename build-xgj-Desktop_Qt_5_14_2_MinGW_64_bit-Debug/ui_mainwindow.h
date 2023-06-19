@@ -16,7 +16,6 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +26,6 @@ public:
     QAction *actionshezhi_2;
     QWidget *centralwidget;
     QStatusBar *statusbar;
-    QToolBar *toolBar;
     QMenuBar *menuBar;
     QMenu *menu;
 
@@ -44,12 +42,10 @@ public:
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 23));
+        menuBar->setGeometry(QRect(0, 0, 800, 26));
+        menuBar->setTabletTracking(false);
         menu = new QMenu(menuBar);
         menu->setObjectName(QString::fromUtf8("menu"));
         MainWindow->setMenuBar(menuBar);
@@ -66,7 +62,6 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionshezhi_2->setText(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
-        toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\344\270\273\350\217\234\345\215\225", nullptr));
     } // retranslateUi
 

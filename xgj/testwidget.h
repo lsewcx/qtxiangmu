@@ -1,7 +1,8 @@
 #ifndef TESTWIDGET_H
 #define TESTWIDGET_H
 
-#include <QWidget>
+#include<QWidget>
+#include<QKeySequenceEdit>
 
 namespace Ui {
 class testwidget;
@@ -17,8 +18,16 @@ public:
 public slots:
     void activated();
 
+
+private slots:
+    /* 声明槽 */
+    void KSEKeySequenceChanged(const QKeySequence &);
+
+
 private:
     Ui::testwidget *ui;
+
+    QKeySequenceEdit  *keySequenceEdit;
 };
 
 #endif // TESTWIDGET_H
