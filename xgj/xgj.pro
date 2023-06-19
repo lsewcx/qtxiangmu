@@ -20,15 +20,18 @@ SOURCES += \
     globalshortcut.cpp \
     main.cpp \
     mainwindow.cpp \
+    screencut.cpp \
     testwidget.cpp
 
 HEADERS += \
     globalshortcut.h \
     mainwindow.h \
+    screencut.h \
     testwidget.h
 
 FORMS += \
     mainwindow.ui \
+    screencut.ui \
     testwidget.ui
 
 win32{

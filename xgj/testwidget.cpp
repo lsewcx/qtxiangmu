@@ -10,7 +10,7 @@ testwidget::testwidget(QWidget *parent) :
 
     this->setGeometry(0,0,300,240);
     keySequenceEdit=new QKeySequenceEdit(this);
-    keySequenceEdit->setGeometry(350,200,150,30);
+    keySequenceEdit->setGeometry(0,0,150,30);
 
     connect(keySequenceEdit,
             SIGNAL(keySequenceChanged(const QKeySequence &)),
@@ -45,14 +45,8 @@ void testwidget::activated()
     else this->show();
 
 }
-
+int count=0;
 void testwidget::KSEKeySequenceChanged(const QKeySequence &keySequence)
 {
-    if(keySequence == QKeySequence(tr("Ctrl+Q"))) {
-            /* 结束程序 */
-            this->close();
-        }else {
-            /* 打印出按下的组合键 */
-        return;
-        }
+
 }

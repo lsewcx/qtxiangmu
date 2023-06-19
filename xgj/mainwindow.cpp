@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "testwidget.h"
+#include "screencut.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -72,6 +73,11 @@ void MainWindow::mousePressEvent(QMouseEvent *event)//鼠标右键
         {
             testwidget* w=new testwidget;
             w->show();
+        });
+        QAction* act4=menu.addAction("截图");
+        connect(act4,&QAction::triggered,this,[=]()
+        {
+            ScreenWidget::Instance()->showFullScreen();
         });
         menu.exec(QCursor::pos());
     }
