@@ -176,7 +176,7 @@ ScreenWidget *ScreenWidget::Instance()
 
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
-    //this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint);
+//  this->setWindowFlags(Qt::Tool | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint);
 
     menu = new QMenu(this);
     menu->addAction("保存当前截图", this, SLOT(saveScreen()));

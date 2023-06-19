@@ -23,7 +23,7 @@ public:
     {
         if (screencut->objectName().isEmpty())
             screencut->setObjectName(QString::fromUtf8("screencut"));
-        screencut->resize(400, 300);
+        screencut->resize(800, 400);
 
         retranslateUi(screencut);
 
