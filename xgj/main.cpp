@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     w.show();
 
 
-
+    //截图的方法函数
     #if (QT_VERSION <= QT_VERSION_CHECK(5,0,0))
     #if _MSC_VER
         QTextCodec *codec = QTextCodec::codecForName("gbk");

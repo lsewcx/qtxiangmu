@@ -17,8 +17,6 @@ testwidget::testwidget(QWidget *parent) :
             this,
             SLOT(KSEKeySequenceChanged(const QKeySequence &)));
 
-
-
     GlobalShortCut *shortcut = new GlobalShortCut("Ctrl+Q",this);
     QObject::connect(shortcut,SIGNAL(activated()),this,SLOT(activated()));
 }
@@ -48,5 +46,5 @@ void testwidget::activated()
 int count=0;
 void testwidget::KSEKeySequenceChanged(const QKeySequence &keySequence)
 {
-
+    ;//填写当按键为   时，执行    操作
 }

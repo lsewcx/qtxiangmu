@@ -58,24 +58,14 @@ void MainWindow::mousePressEvent(QMouseEvent *event)//鼠标右键
         {
             QMessageBox::information(this,"c++","你选择的是c++");
         });
-        QAction* act1=menu.addAction(("java"));
+        QAction* act1=menu.addAction("设置");
         connect(act1,&QAction::triggered,this,[=]()
-        {
-            QMessageBox::information(this,"java","你选择的是java");
-        });
-        QAction* act2=menu.addAction("python");
-        connect(act2,&QAction::triggered,this,[=]()
-        {
-            QMessageBox::information(this,"python","你选择的是python");
-        });
-        QAction* act3=menu.addAction("设置");
-        connect(act3,&QAction::triggered,this,[=]()
         {
             testwidget* w=new testwidget;
             w->show();
         });
-        QAction* act4=menu.addAction("截图");
-        connect(act4,&QAction::triggered,this,[=]()
+        QAction* act2=menu.addAction("截图");
+        connect(act2,&QAction::triggered,this,[=]()
         {
             ScreenWidget::Instance()->showFullScreen();
         });

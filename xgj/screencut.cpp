@@ -225,12 +225,12 @@ void ScreenWidget::showEvent(QShowEvent *)
     screen->setStart(point);
     screen->setEnd(point);
 
-#if (QT_VERSION <= QT_VERSION_CHECK(5,0,0))
-    *fullScreen = fullScreen->grabWindow(QApplication::desktop()->winId(), 0, 0, screen->width(), screen->height());
-#else
-    QScreen *pscreen = QApplication::primaryScreen();
-    *fullScreen = pscreen->grabWindow(QApplication::desktop()->winId(), 0, 0, screen->width(), screen->height());
-#endif
+    #if (QT_VERSION <= QT_VERSION_CHECK(5,0,0))
+        *fullScreen = fullScreen->grabWindow(QApplication::desktop()->winId(), 0, 0, screen->width(), screen->height());
+    #else
+        QScreen *pscreen = QApplication::primaryScreen();
+        *fullScreen = pscreen->grabWindow(QApplication::desktop()->winId(), 0, 0, screen->width(), screen->height());
+    #endif
 
     //设置透明度实现模糊背景
     QPixmap pix(screen->width(), screen->height());
