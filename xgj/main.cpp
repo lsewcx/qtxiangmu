@@ -1,3 +1,4 @@
+//主窗口
 #include "mainwindow.h"
 #include "globalshortcut.h"
 #include <QApplication>

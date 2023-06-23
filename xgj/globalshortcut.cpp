@@ -1,3 +1,4 @@
+//截图窗口
 #include "globalshortcut.h"
 
 GlobalShortCut::~GlobalShortCut()

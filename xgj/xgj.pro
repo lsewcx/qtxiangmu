@@ -2,7 +2,7 @@
 #@author lse
 #本文件是配置文件
 
-QT       += core gui
+QT += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

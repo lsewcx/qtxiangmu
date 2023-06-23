@@ -1,3 +1,4 @@
+//截图窗口
 #include "screencut.h"
 #include "ui_screencut.h"
 #include <QMutex>

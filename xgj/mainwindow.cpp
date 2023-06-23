@@ -41,6 +41,41 @@ MainWindow::MainWindow(QWidget *parent)
     //如果指定父对象不是独立窗口
     //testwidget* w=new testwidget(this);
 
+
+    //连接数据库
+
+    qDebug()<<"available drivers:";
+       QStringList drivers = QSqlDatabase::drivers();
+       foreach(QString driver, drivers)
+           qDebug()<<driver;
+
+
+
+    QStringList list=QSqlDatabase::drivers();
+    qDebug()<<list;
+    QSqlDatabase db=QSqlDatabase::addDatabase("QMYSQL");
+    if(db.isValid())
+    {
+        QMessageBox::information(this,"conn","ok");
+    }
+    else
+    {
+        QMessageBox::information(this,"conn","error");
+    }
+    db.setHostName("127.0.0.1");
+    db.setPort(3306);
+    db.setUserName("root");
+    db.setPassword("lc210085");
+    db.setDatabaseName("lse1");
+    if(db.open())
+    {
+        QMessageBox::information(this,"成功","");
+    }
+    else
+    {
+        QString msg=db.lastError().text();
+        QMessageBox::information(this,"失败","");
+    }
 }
 
 MainWindow::~MainWindow()

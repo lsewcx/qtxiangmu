@@ -275,6 +275,7 @@ Makefile: ../xgj/xgj.pro ../../qt/5.14.2/mingw73_64/mkspecs/win32-g++/qmake.conf
 		../xgj/xgj.pro \
 		../../qt/5.14.2/mingw73_64/lib/Qt5Widgets.prl \
 		../../qt/5.14.2/mingw73_64/lib/Qt5Gui.prl \
+		../../qt/5.14.2/mingw73_64/lib/Qt5Sql.prl \
 		../../qt/5.14.2/mingw73_64/lib/Qt5Core.prl \
 		../../qt/5.14.2/mingw73_64/lib/qtmain.prl \
 		../../qt/5.14.2/mingw73_64/mkspecs/features/build_pass.prf
@@ -484,6 +485,7 @@ Makefile: ../xgj/xgj.pro ../../qt/5.14.2/mingw73_64/mkspecs/win32-g++/qmake.conf
 ../xgj/xgj.pro:
 ../../qt/5.14.2/mingw73_64/lib/Qt5Widgets.prl:
 ../../qt/5.14.2/mingw73_64/lib/Qt5Gui.prl:
+../../qt/5.14.2/mingw73_64/lib/Qt5Sql.prl:
 ../../qt/5.14.2/mingw73_64/lib/Qt5Core.prl:
 ../../qt/5.14.2/mingw73_64/lib/qtmain.prl:
 ../../qt/5.14.2/mingw73_64/mkspecs/features/build_pass.prf:
