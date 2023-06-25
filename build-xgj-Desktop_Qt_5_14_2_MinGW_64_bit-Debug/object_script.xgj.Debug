@@ -1,0 +1,11 @@
+debug/globalshortcut.o
+debug/main.o
+debug/mainwindow.o
+debug/register.o
+debug/screencut.o
+debug/testwidget.o
+debug/moc_globalshortcut.o
+debug/moc_mainwindow.o
+debug/moc_register.o
+debug/moc_screencut.o
+debug/moc_testwidget.o

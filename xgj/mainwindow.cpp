@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "testwidget.h"
 #include "screencut.h"
+#include "register.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -103,6 +104,12 @@ void MainWindow::mousePressEvent(QMouseEvent *event)//鼠标右键
         connect(act2,&QAction::triggered,this,[=]()
         {
             ScreenWidget::Instance()->showFullScreen();
+        });
+        QAction* act3=menu.addAction("注册");
+        connect(act3,&QAction::triggered,this,[=]()
+        {
+           Register* z=new Register;
+            z->show();
         });
         menu.exec(QCursor::pos());
     }

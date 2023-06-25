@@ -20,17 +20,20 @@ SOURCES += \
     globalshortcut.cpp \
     main.cpp \
     mainwindow.cpp \
+    register.cpp \
     screencut.cpp \
     testwidget.cpp
 
 HEADERS += \
     globalshortcut.h \
     mainwindow.h \
+    register.h \
     screencut.h \
     testwidget.h
 
 FORMS += \
     mainwindow.ui \
+    register.ui \
     screencut.ui \
     testwidget.ui
 

@@ -1,0 +1,11 @@
+release/globalshortcut.o
+release/main.o
+release/mainwindow.o
+release/register.o
+release/screencut.o
+release/testwidget.o
+release/moc_globalshortcut.o
+release/moc_mainwindow.o
+release/moc_register.o
+release/moc_screencut.o
+release/moc_testwidget.o
