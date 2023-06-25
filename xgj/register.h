@@ -4,6 +4,17 @@
 #include <QDialog>
 #include <QDebug>
 #include <QLineEdit>
+#include <QSqlQuery>
+#include <QtSql>
+#include <qsqldatabase.h>
+#include<QString>
+#include<QSqlDatabase>
+#include<QSqlError>
+#include <QString>
+#include <string.h>
+#include<cstring>
+#include<string>
+#include<typeinfo>
 
 namespace Ui {
 class Register;

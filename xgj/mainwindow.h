@@ -13,9 +13,7 @@
 #include<QEvent>
 #include"windows.h"
 #include<QKeySequenceEdit>
-#include<QString>
-#include<QSqlDatabase>
-#include<QSqlError>
+
 
 QT_BEGIN_NAMESPACE
 //ui文件中的类

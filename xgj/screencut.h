@@ -6,6 +6,8 @@
 #include <QPoint>
 #include <QSize>
 #include <QMouseEvent>
+#include <cstring>
+
 
 
 namespace Ui {

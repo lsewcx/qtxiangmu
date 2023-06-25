@@ -51,11 +51,13 @@ public:
 
         lineEdit_3 = new QLineEdit(gridLayoutWidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(lineEdit_3, 1, 0, 1, 1);
 
         lineEdit_4 = new QLineEdit(gridLayoutWidget);
         lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEdit_4->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(lineEdit_4, 2, 0, 1, 1);
 
