@@ -37,6 +37,8 @@ FORMS += \
     screencut.ui \
     testwidget.ui
 
+
+
 win32{
 LIBS+= -luser32
 }
